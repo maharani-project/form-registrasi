@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #fff9db;
+    background: linear-gradient(to bottom right, #FFF9C4, #E1BEE7);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,21 +9,24 @@ body {
 }
 
 .container {
-    background-color: white;
+    background-color: #ffffff; /* Putih */
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     width: 400px;
+    color: #333;
 }
 
 h2 {
     text-align: center;
+    color: #4A148C; /* Ungu gelap untuk aksen */
 }
 
 label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
+    color: #333;
 }
 
 input {
@@ -32,18 +35,25 @@ input {
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+input::placeholder {
+    color: #999;
 }
 
 button {
     width: 100%;
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: #BA68C8; /* Ungu lembut */
     color: white;
     border: none;
     border-radius: 4px;
     font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #AB47BC; /* Hover effect */
 }

@@ -25,12 +25,56 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO users (username, password, email) VALUES ('$username', '$hashed_password', '$email')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "Pendaftaran berhasil!";
+        // Tampilkan pesan sukses dengan background gambar
+        echo '
+        <!DOCTYPE html>
+        <html lang="id">
+        <head>
+            <meta charset="UTF-8">
+            <title>Pendaftaran Berhasil</title>
+            <style>
+                body {
+                    margin: 0;
+                    padding: 0;
+                    background-image: url(\'perpustakaan.jpg\');
+                    background-size: cover;
+                    background-position: center;
+                    height: 100vh;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-family: Arial, sans-serif;
+                }
+                .message-box {
+                    background-color: rgba(255, 255, 255, 0.85);
+                    padding: 40px;
+                    border-radius: 10px;
+                    text-align: center;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+                }
+                h2 {
+                    color: #28a745;
+                    margin-bottom: 15px;
+                }
+                p {
+                    color: #333;
+                    font-size: 18px;
+                    margin: 0;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="message-box">
+                <h2>Pendaftaran Berhasil!</h2>
+                <p>Selamat, akun Anda telah berhasil dibuat.</p>
+            </div>
+        </body>
+        </html>
+        ';
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
 }
 
-// Menutup koneksi
 $conn->close();
 ?>
